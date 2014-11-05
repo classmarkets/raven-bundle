@@ -1,0 +1,8 @@
+--TEST--
+recorder call
+--TEMPLATE--
+{{ sentry_event_id(exception) }}
+--DATA--
+return array('exception' => new Exception())
+--EXPECT--
+abc

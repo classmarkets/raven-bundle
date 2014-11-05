@@ -1,0 +1,29 @@
+parameters:
+    twig.controller.exception.class: Classmarkets\RavenBundle\Controller\ExceptionController
+
+framework:
+    secret: 123
+    test: true
+    router:
+        resource: "%kernel.root_dir%/routing.php"
+        strict_requirements: ~
+    templating:
+        engines: ['twig']
+
+# Twig Configuration
+twig:
+    debug:            true
+    strict_variables: true
+
+monolog:
+    handlers:
+        raven:
+            type:  raven
+            dsn: ""
+            client_id: raven
+            level: error
+
+services:
+    raven:
+        class: Classmarkets\RavenBundle\Tests\Integration\MockClient
+

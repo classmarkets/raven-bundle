@@ -1,0 +1,21 @@
+parameters:
+#    cm_raven.example.class: Classmarkets\RavenBundle\Example
+    cm_raven.sentry_event_id_extension.class: Classmarkets\RavenBundle\SentryEventExtension
+    twig.controller.exception.class: Classmarkets\RavenBundle\ExceptionListener
+
+services:
+    cm_raven.raven_client:
+        class: Classmarkets\RavenBundle\RavenClient
+        decorates: raven
+        arguments:
+            - @cm_raven.raven_client.inner
+            - @cm_raven.sentry_event_recorder
+
+    cm_raven.sentry_event_recorder:
+        class: Classmarkets\RavenBundle\SentryEventRecorder
+
+    cm_raven.twig.sentry_event_id_extension:
+        class: %cm_raven.sentry_event_id_extension.class%
+        arguments: [ @cm_raven.sentry_event_recorder ]
+        tags:
+            - { name: twig.extension }

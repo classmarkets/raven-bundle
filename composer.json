@@ -1,0 +1,22 @@
+{
+    "name": "classmarkets/raven-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Schultz",
+            "email": "peter.schultz@classmarkets.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "~2.3"
+    },
+    "require-dev": {
+        "symfony/monolog-bundle": "~2.6.1",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Classmarkets\\RavenBundle\\": ""
+        }
+    }
+}
