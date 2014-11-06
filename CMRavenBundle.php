@@ -13,11 +13,6 @@ class CMRavenBundle extends Bundle
     {
         parent::build($container);
 
-        $container->setParameter(
-            'twig.exception_listener.class',
-            'Classmarkets\RavenBundle\ExceptionListener'
-        );
-
         $container->addCompilerPass(new RecorderCompilerPass());
     }
 

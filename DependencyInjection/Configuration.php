@@ -27,6 +27,10 @@ class Configuration implements ConfigurationInterface
                     ->isRequired()
                     ->cannotBeEmpty()
                 ->end()
+                ->booleanNode('enable_exception_listener')
+                    ->info('Whether to replace the default exception listener')
+                    ->defaultTrue()
+                ->end()
             ->end()
         ->end();
 

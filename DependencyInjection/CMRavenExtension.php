@@ -25,7 +25,12 @@ class CMRavenExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->getDefinition('cm_raven.raven_client')
-            ->setDecoratedService($config['client_id']);
+        $container->getDefinition('cm_raven.raven_client')->setDecoratedService($config['client_id']);
+
+        $enableExceptionListener = $config['enable_exception_listener'];
+        $container->setParameter('cm_raven.enable_exception_listener', $enableExceptionListener);
+        if ($enableExceptionListener) {
+            $container->setParameter('twig.exception_listener.class', 'Classmarkets\RavenBundle\ExceptionListener');
+        }
     }
 }
