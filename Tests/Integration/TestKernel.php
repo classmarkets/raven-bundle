@@ -29,15 +29,4 @@ class TestKernel extends Kernel
         return '/this/directory/cannot/possibly/exist,/right?';
     }
      */
-
-    protected function _initializeContainer()
-    {
-        $class = '\Symfony\Component\DependencyInjection\Container';
-
-        $container = $this->buildContainer();
-        $container->compile();
-
-        $this->container = new $class();
-        $this->container->set('kernel', $this);
-    }
 }
