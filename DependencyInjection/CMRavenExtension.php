@@ -24,5 +24,8 @@ class CMRavenExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $container->getDefinition('cm_raven.raven_client')
+            ->setDecoratedService($config['client_id']);
     }
 }

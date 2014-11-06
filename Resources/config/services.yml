@@ -6,9 +6,8 @@ parameters:
 services:
     cm_raven.raven_client:
         class: Classmarkets\RavenBundle\RavenClient
-        decorates: raven
         arguments:
-            - @cm_raven.raven_client.inner
+            - @cm_raven.raven_client.inner # the decoration is added dynamically at runtime
             - @cm_raven.sentry_event_recorder
 
     cm_raven.sentry_event_recorder:
