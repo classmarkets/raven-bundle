@@ -2,9 +2,9 @@
 
 namespace Classmarkets\RavenBundle;
 
-// Until there is an interface for the raven client we have no choice
+// Since there is no interface for the raven client we have no choice
 // but to extend the base class, even though this is really a decorator
-// (monolog depends on \Raven_Client)
+// (monolog depends directly on \Raven_Client)
 class RavenClient extends \Raven_Client
 {
     /** @var \Raven_Client */
@@ -31,7 +31,8 @@ class RavenClient extends \Raven_Client
         return $eventId;
     }
 
-    // Delegate all other methods to the real client. Until we can implement an interface, we can't use __call unfortunately.
+    // Delegate all other methods to the real client. Since we don't
+    // implement an interface, we can't use __call, unfortunately.
 
     public function getLastError()
     {
