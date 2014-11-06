@@ -5,7 +5,7 @@ namespace Classmarkets\RavenBundle;
 // Since there is no interface for the raven client we have no choice
 // but to extend the base class, even though this is really a decorator
 // (monolog depends directly on \Raven_Client)
-class RavenClient extends \Raven_Client
+class RecordingRavenClient extends \Raven_Client
 {
     /** @var \Raven_Client */
     private $client;

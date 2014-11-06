@@ -1,6 +1,8 @@
 <?php
 
-namespace Classmarkets\RavenBundle;
+namespace Classmarkets\RavenBundle\Twig;
+
+use Classmarkets\RavenBundle\SentryEventRecorder;
 
 class SentryEventExtension extends \Twig_Extension
 {
@@ -14,7 +16,7 @@ class SentryEventExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'sentry_event_id_extension';
+        return 'sentry_event_extension';
     }
 
     public function getFunctions()

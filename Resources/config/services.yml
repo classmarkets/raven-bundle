@@ -1,7 +1,7 @@
 parameters:
     cm_raven.sentry_event_recorder.class: Classmarkets\RavenBundle\SentryEventRecorder
-    cm_raven.raven_client.class: Classmarkets\RavenBundle\RavenClient
-    cm_raven.sentry_event_id_extension.class: Classmarkets\RavenBundle\SentryEventExtension
+    cm_raven.raven_client.class: Classmarkets\RavenBundle\RecordingRavenClient
+    cm_raven.twig_extension.class: Classmarkets\RavenBundle\Twig\SentryEventExtension
 
     twig.controller.exception.class: Classmarkets\RavenBundle\ExceptionListener
 
@@ -15,8 +15,8 @@ services:
             - @cm_raven.raven_client.inner # the decoration is added dynamically at runtime
             - @cm_raven.sentry_event_recorder
 
-    cm_raven.twig.sentry_event_id_extension:
-        class: %cm_raven.sentry_event_id_extension.class%
+    cm_raven.twig_extension:
+        class: %cm_raven.twig_extension.class%
         arguments: [ @cm_raven.sentry_event_recorder ]
         tags:
             - { name: twig.extension }

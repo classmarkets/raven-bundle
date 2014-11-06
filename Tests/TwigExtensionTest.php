@@ -2,7 +2,7 @@
 
 namespace Classmarkets\RavenBundle\Tests;
 
-use Classmarkets\RavenBundle\SentryEventExtension;
+use Classmarkets\RavenBundle\Twig\SentryEventExtension;
 
 class TwigExtensionTest extends \Twig_Test_IntegrationTestCase
 {

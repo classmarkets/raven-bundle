@@ -2,9 +2,9 @@
 
 namespace Classmarkets\RavenBundle\Tests;
 
-use Classmarkets\RavenBundle\RavenClient;
+use Classmarkets\RavenBundle\RecordingRavenClient;
 
-class RavenClientTest extends \PHPUnit_Framework_TestCase
+class RecordingRavenClientTest extends \PHPUnit_Framework_TestCase
 {
     public function testNotifiesRecorderViaCaptureException()
     {
@@ -20,7 +20,7 @@ class RavenClientTest extends \PHPUnit_Framework_TestCase
         $recorder = \Mockery::mock('Classmarkets\RavenBundle\SentryEventRecorder');
         $recorder->shouldReceive('addExceptionEventId')->with($exception, '456');
 
-        $ourRavenClient = new RavenClient($realRavenClient, $recorder);
+        $ourRavenClient = new RecordingRavenClient($realRavenClient, $recorder);
 
         $eventId = $ourRavenClient->captureException($exception);
         $this->assertEquals('123', $eventId);
@@ -33,7 +33,7 @@ class RavenClientTest extends \PHPUnit_Framework_TestCase
 
         $recorder = \Mockery::mock('Classmarkets\RavenBundle\SentryEventRecorder');
 
-        $ourRavenClient = new RavenClient($realRavenClient, $recorder);
+        $ourRavenClient = new RecordingRavenClient($realRavenClient, $recorder);
         $ourRavenClient->captureMessage('foobar');
     }
 
@@ -42,7 +42,7 @@ class RavenClientTest extends \PHPUnit_Framework_TestCase
         $realRavenClient = \Mockery::mock('Raven_Client');
         $recorder = \Mockery::mock('Classmarkets\RavenBundle\SentryEventRecorder');
 
-        $ourRavenClient = new RavenClient($realRavenClient, $recorder);
+        $ourRavenClient = new RecordingRavenClient($realRavenClient, $recorder);
 
         $this->assertInstanceOf('Raven_Client', $ourRavenClient);
     }
