@@ -7,9 +7,13 @@ namespace Classmarkets\RavenBundle\Tests\Integration;
 // (monolog depends on \Raven_Client)
 class MockClient extends \Raven_Client
 {
-    public function getIdent($ident) { return 'abc'; }
+    public function getIdent($ident)
+    {
+        return 'abc';
+    }
 
-    public function capture($data, $stack, $vars = null) { return $this->getIdent(''); }
-    public function sendUnsentErrors() { }
-    public function send($data) { }
+    public function capture($data, $stack, $vars = null)
+    {
+        return $this->getIdent('');
+    }
 }

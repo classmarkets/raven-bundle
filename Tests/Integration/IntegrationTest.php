@@ -3,8 +3,6 @@
 namespace Classmarkets\RavenBundle\Tests\Integration;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-//use Symfony\Component\HttpFoundation\Request;
-//use Symfony\Component\HttpKernel\Kernel;
 
 class IntegrationTest extends WebTestCase
 {
