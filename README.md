@@ -40,7 +40,7 @@ $container->get('cm_raven.sentry_event_recorder')->getEventIdForException($excep
 Installation
 ------------
 
-The usual. Install it with `composer require classmarkets/raven-bundle` and
+The usual. Install it with `composer require classmarkets/raven-bundle ~1.0.0` and
 add it to the kernel:
 
 ```
