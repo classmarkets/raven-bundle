@@ -22,11 +22,4 @@ class TestKernel extends Kernel
     {
         $loader->load(__DIR__.'/config.yml');
     }
-
-    /*
-    public function getCacheDir()
-    {
-        return '/this/directory/cannot/possibly/exist,/right?';
-    }
-     */
 }

@@ -15,6 +15,4 @@ class CMRavenBundle extends Bundle
 
         $container->addCompilerPass(new AddRecorderCompilerPass());
     }
-
-
 }
