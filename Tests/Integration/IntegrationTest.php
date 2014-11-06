@@ -13,6 +13,10 @@ class IntegrationTest extends WebTestCase
 
     public function testErrorPage()
     {
+        if (defined('HHVM_VERSION')) {
+            $this->markTestSkipped("Skipping on hhvm (xml parsing in the framework bundle fails");
+        }
+
         $client = static::createClient();
         $client->request('GET', '/_cm_raven_bundle_test');
 
