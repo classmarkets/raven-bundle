@@ -1,7 +1,7 @@
 {
     "name": "classmarkets/raven-bundle",
     "type": "symfony-bundle",
-    "description": "Display raven event ids on error pages",
+    "description": "Display sentry event ids on error pages",
     "keywords": [ "symfony", "bundle", "sentry", "raven" ],
     "license": "MIT",
     "authors": [

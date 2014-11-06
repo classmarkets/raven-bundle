@@ -1,14 +1,13 @@
 raven-bundle
 ============
 
+[![Build Status](https://travis-ci.org/classmarkets/raven-bundle.svg?branch=master)](https://travis-ci.org/classmarkets/raven-bundle)
+
 Are you using [sentry](https://getsentry.com) for exception monitoring in
-Symfony 2? Good! 
+Symfony 2? Good! Now let's show meaningful error pages to your users.
 
-Now let's show meaningful error pages to your users. Sentry generates ids for
-each event it receives.
-
-This bundle adds a Twig function that let's you access those event ids in
-error page templates:
+Sentry generates ids for each event it receives. This bundle adds a Twig
+function that let's you access those event ids in error page templates:
 
 ```twig
 
