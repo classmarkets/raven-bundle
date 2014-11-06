@@ -16,4 +16,14 @@
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
-</phpunit>
+
+    <filter>
+      <whitelist>
+        <directory>.</directory>
+        <exclude>
+          <directory>./Resources</directory>
+          <directory>./vendor</directory>
+        </exclude>
+      </whitelist>
+    </filter>
+  </phpunit>

@@ -33,6 +33,8 @@ class RavenClient extends \Raven_Client
 
     // Delegate all other methods to the real client. Since we don't
     // implement an interface, we can't use __call, unfortunately.
+    //
+    // @codeCoverageIgnoreStart
 
     public function getLastError()
     {
@@ -107,4 +109,6 @@ class RavenClient extends \Raven_Client
     {
         return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
+
+    // @codeCoverageIgnoreEnd
 }

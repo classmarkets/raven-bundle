@@ -16,6 +16,9 @@ class TwigExtensionTest extends \Twig_Test_IntegrationTestCase
         );
     }
 
+    /**
+     * @codeCoverageIgnore This method is called in eval'd code
+     */
     public function getFixturesDir()
     {
         return __DIR__ . '/TwigFixtures';
