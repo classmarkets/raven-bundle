@@ -21,10 +21,7 @@ class ExceptionListener extends BaseListener
 
         if ($request->attributes->has('exception')) {
             $flattenException = $request->attributes->get('exception');
-
-            if ($eventId = $this->recorder->getEventIdForException($exception)) {
-                $this->recorder->addExceptionEventId($flattenException, $eventId);
-            }
+            $this->recorder->addExceptionAlias($exception, $flattenException);
         }
 
         return $request;

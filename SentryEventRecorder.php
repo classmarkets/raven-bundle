@@ -33,4 +33,11 @@ class SentryEventRecorder
 
         return null;
     }
+
+    public function addExceptionAlias($originalException, $aliasException)
+    {
+        if ($eventId = $this->getEventIdForException($originalException)) {
+            $this->addExceptionEventId($aliasException, $eventId);
+        }
+    }
 }
