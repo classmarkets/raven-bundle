@@ -35,75 +35,75 @@ class RavenClient extends \Raven_Client
 
     public function getLastError()
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function getIdent($ident)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function message($message, $params=array(), $level=self::INFO, $stack=false, $vars = null)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function exception($exception)
     {
         // this one is deprecated, so we don't decorate it
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function captureMessage($message, $params=array(), $level_or_options=array(), $stack=false, $vars = null)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function captureQuery($query, $level=self::INFO, $engine = '')
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function get_default_data()
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function capture($data, $stack, $vars = null)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function sanitize(&$data)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function process(&$data)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function sendUnsentErrors()
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function send($data)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function translateSeverity($severity)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function registerSeverityMap($map)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function set_user_data($id, $email=null, $data=array())
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function user_context($data)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function tags_context($data)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
     public function extra_context($data)
     {
-        return call_user_func_array([$this->client, __FUNCTION__], func_get_args());
+        return call_user_func_array(array($this->client, __FUNCTION__), func_get_args());
     }
 }
