@@ -1,5 +1,8 @@
 {
     "name": "classmarkets/raven-bundle",
+    "type": "symfony-bundle",
+    "description": "Display raven event ids on error pages",
+    "keywords": [ "symfony", "bundle", "sentry", "raven" ],
     "license": "MIT",
     "authors": [
         {
@@ -8,11 +11,14 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "~2.3"
+        "symfony/framework-bundle": "~2.3",
+        "symfony/twig-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.3",
+        "raven/raven": "~0.10.0"
     },
     "require-dev": {
-        "symfony/monolog-bundle": "~2.6.1",
-        "mockery/mockery": "~0.9"
+        "mockery/mockery": "~0.9",
+        "symfony/browser-kit": "~2.3"
     },
     "autoload": {
         "psr-4": {
