@@ -1,0 +1,9 @@
+imports:
+    - { resource: base.yml }
+
+cm_raven:
+    client_id: raven
+
+services:
+    raven:
+        class: Classmarkets\RavenBundle\Tests\Integration\MockClient

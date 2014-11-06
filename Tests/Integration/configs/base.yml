@@ -5,10 +5,10 @@ framework:
     secret: 123
     test: true
     router:
-        resource: "%kernel.root_dir%/routing.php"
+        resource: "%kernel.root_dir%/configs/routing.php"
         strict_requirements: ~
     templating:
-        engines: ['twig']
+        engines: [ twig ]
 
 # Twig Configuration
 twig:
@@ -22,10 +22,3 @@ monolog:
             dsn: ""
             client_id: raven
             level: error
-
-cm_raven:
-    client_id: raven
-
-services:
-    raven:
-        class: Classmarkets\RavenBundle\Tests\Integration\MockClient

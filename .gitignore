@@ -1,4 +1,5 @@
 /vendor
-/Tests/Integration/cache
+/Tests/Integration/cache/*
+!/Tests/Integration/cache/.gitkeep
 /Tests/Integration/logs
 composer.lock
