@@ -16,12 +16,12 @@ class TestKernel extends Kernel
 
         $this->configFilename = $configFilename;
 
-        $this->cacheDir = tempnam(sys_get_temp_dir(), 'raven-bundle-test');
-        unlink($this->cacheDir);
+        $this->cacheDir = $cacheDir = tempnam(sys_get_temp_dir(), 'raven-bundle-test');
+        unlink($cacheDir);
 
-        register_shutdown_function(function () {
+        register_shutdown_function(function () use ($cacheDir) {
             $fs = new Filesystem();
-            $fs->remove($this->cacheDir);
+            $fs->remove($cacheDir);
         });
     }
 
