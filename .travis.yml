@@ -7,8 +7,16 @@ php:
   - 5.6
   - hhvm
 
+env:
+  - SYMFONY_VERSION=2.3
+  - SYMFONY_VERSION=2.4
+  - SYMFONY_VERSION=2.5
+  - SYMFONY_VERSION=2.6
+
 before_script:
     - composer self-update
     - composer update --prefer-source
+    - composer require symfony/framework-bundle ~${SYMFONY_VERSION}.0
+    - composer require symfony/twig-bundle ~${SYMFONY_VERSION}.0
 
 script: phpunit --coverage-text
