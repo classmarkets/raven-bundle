@@ -3,7 +3,7 @@ parameters:
     cm_raven.raven_client.class: Classmarkets\RavenBundle\RecordingRavenClient
     cm_raven.twig_extension.class: Classmarkets\RavenBundle\Twig\SentryEventExtension
 
-    twig.controller.exception.class: Classmarkets\RavenBundle\ExceptionListener
+    twig.exception_listener.class: Classmarkets\RavenBundle\ExceptionListener
 
 services:
     cm_raven.sentry_event_recorder:
