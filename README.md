@@ -2,6 +2,7 @@ raven-bundle
 ============
 
 [![Build Status](https://travis-ci.org/classmarkets/raven-bundle.svg?branch=master)](https://travis-ci.org/classmarkets/raven-bundle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/classmarkets/raven-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/classmarkets/raven-bundle/?branch=master)
 
 Are you using [sentry](https://getsentry.com) for exception monitoring in
 Symfony 2? Good! Now let's show meaningful error pages to your users.
