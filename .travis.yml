@@ -16,6 +16,8 @@ env:
   - SYMFONY_VERSION=3.0
 
 matrix:
+    allow_failures:
+        - env: SYMFONY_VERSION=3.0
     exlude:
         - php: "5.3"
           env: SYMFONY_VERSION=3.0
