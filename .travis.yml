@@ -27,7 +27,7 @@ cache:
     - vendor
 
 before_script:
-    - composer update --prefer-source
+    - composer update
     - composer require --update-with-dependencies symfony/framework-bundle=~${SYMFONY_VERSION}.0 symfony/twig-bundle=~${SYMFONY_VERSION}.0
 
 script: phpunit --coverage-text
