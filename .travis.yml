@@ -27,7 +27,6 @@ cache:
     - vendor
 
 before_script:
-    - composer self-update
     - composer update --prefer-source
     - composer require --update-with-dependencies symfony/framework-bundle=~${SYMFONY_VERSION}.0 symfony/twig-bundle=~${SYMFONY_VERSION}.0
 
