@@ -5,16 +5,16 @@ parameters:
 
 services:
     cm_raven.sentry_event_recorder:
-        class: %cm_raven.sentry_event_recorder.class%
+        class: "%cm_raven.sentry_event_recorder.class%"
 
     cm_raven.raven_client:
-        class: %cm_raven.raven_client.class%
+        class: "%cm_raven.raven_client.class%"
         arguments:
             - "@cm_raven.raven_client.inner" # the decoration is added dynamically at runtime
             - "@cm_raven.sentry_event_recorder"
 
     cm_raven.twig_extension:
-        class: %cm_raven.twig_extension.class%
+        class: "%cm_raven.twig_extension.class%"
         arguments: [ "@cm_raven.sentry_event_recorder" ]
         tags:
             - { name: twig.extension }

@@ -6,6 +6,8 @@ use Classmarkets\RavenBundle\Twig\SentryEventExtension;
 
 class TwigExtensionTest extends \Twig_Test_IntegrationTestCase
 {
+    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
     public function getExtensions()
     {
         $recorder = \Mockery::mock('Classmarkets\RavenBundle\SentryEventRecorder');

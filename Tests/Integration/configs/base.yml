@@ -1,6 +1,3 @@
-parameters:
-    twig.controller.exception.class: Classmarkets\RavenBundle\Controller\ExceptionController
-
 framework:
     secret: 123
     test: true
@@ -22,3 +19,12 @@ monolog:
             dsn: ""
             client_id: raven
             level: error
+
+services:
+    # Overrides the native controller
+    twig.controller.exception:
+        tags: [ controller.service_arguments ]
+        class: Classmarkets\RavenBundle\Controller\ExceptionController
+        arguments:
+            - "@twig"
+            - "%kernel.debug%"

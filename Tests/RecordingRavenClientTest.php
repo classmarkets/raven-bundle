@@ -4,8 +4,10 @@ namespace Classmarkets\RavenBundle\Tests;
 
 use Classmarkets\RavenBundle\RecordingRavenClient;
 
-class RecordingRavenClientTest extends \PHPUnit_Framework_TestCase
+class RecordingRavenClientTest extends \PHPUnit\Framework\TestCase
 {
+    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
     public function testNotifiesRecorderViaCaptureException()
     {
         $exception = new \Exception();

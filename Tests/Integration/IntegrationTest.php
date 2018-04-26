@@ -3,10 +3,11 @@
 namespace Classmarkets\RavenBundle\Tests\Integration;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\Yaml\Yaml;
 
-class IntegrationTest extends \PHPUnit_Framework_TestCase
+class IntegrationTest extends \PHPUnit\Framework\TestCase
 {
+    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
     /** @dataProvider getConfigurations */
     public function testErrorPage($config, $debug)
     {
