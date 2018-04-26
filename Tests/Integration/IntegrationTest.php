@@ -25,7 +25,7 @@ class IntegrationTest extends \PHPUnit\Framework\TestCase
 
     public function getConfigurations()
     {
-        foreach (glob(__DIR__ . '/configs/test*.yml') as $configFilename) {
+        foreach (glob(__DIR__.'/configs/test*.yml') as $configFilename) {
             yield [$configFilename, $debug = true];
         }
     }
