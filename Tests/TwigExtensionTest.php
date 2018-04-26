@@ -6,14 +6,16 @@ use Classmarkets\RavenBundle\Twig\SentryEventExtension;
 
 class TwigExtensionTest extends \Twig_Test_IntegrationTestCase
 {
+    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
     public function getExtensions()
     {
         $recorder = \Mockery::mock('Classmarkets\RavenBundle\SentryEventRecorder');
         $recorder->shouldReceive('getEventIdForException')->andReturn('abc');
 
-        return array(
+        return [
             new SentryEventExtension($recorder),
-        );
+        ];
     }
 
     /**
@@ -21,6 +23,6 @@ class TwigExtensionTest extends \Twig_Test_IntegrationTestCase
      */
     public function getFixturesDir()
     {
-        return __DIR__ . '/TwigFixtures';
+        return __DIR__.'/TwigFixtures';
     }
 }

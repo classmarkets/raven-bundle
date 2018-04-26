@@ -5,12 +5,7 @@ namespace Classmarkets\RavenBundle;
 class SentryEventRecorder
 {
     /** @var string[] */
-    private $idStore;
-
-    public function __construct()
-    {
-        $this->idStore = array();
-    }
+    private $idStore = [];
 
     /**
      * @param object $exception
@@ -40,7 +35,7 @@ class SentryEventRecorder
     }
 
     /**
-     * Store the same event id for $aliasException as for $originalException
+     * Store the same event id for $aliasException as for $originalException.
      *
      * @param object $originalException
      * @param object $aliasException

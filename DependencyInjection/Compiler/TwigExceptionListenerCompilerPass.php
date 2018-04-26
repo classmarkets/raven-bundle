@@ -2,7 +2,6 @@
 
 namespace Classmarkets\RavenBundle\DependencyInjection\Compiler;
 
-use Classmarkets\BaseBundle\Routing\Router;
 use Classmarkets\RavenBundle\ExceptionListener;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

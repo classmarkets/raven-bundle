@@ -4,8 +4,10 @@ namespace Classmarkets\RavenBundle\Tests;
 
 use Classmarkets\RavenBundle\SentryEventRecorder;
 
-class SentryEventRecorderTest extends \PHPUnit_Framework_TestCase
+class SentryEventRecorderTest extends \PHPUnit\Framework\TestCase
 {
+    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
     public function testStoreAndRetrieveEventId()
     {
         $recorder = new SentryEventRecorder();

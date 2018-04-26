@@ -4,8 +4,10 @@ namespace Classmarkets\RavenBundle\Tests;
 
 use Classmarkets\RavenBundle\RecordingRavenClient;
 
-class RecordingRavenClientTest extends \PHPUnit_Framework_TestCase
+class RecordingRavenClientTest extends \PHPUnit\Framework\TestCase
 {
+    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
     public function testNotifiesRecorderViaCaptureException()
     {
         $exception = new \Exception();
@@ -13,7 +15,7 @@ class RecordingRavenClientTest extends \PHPUnit_Framework_TestCase
         $realRavenClient = \Mockery::mock('Raven_Client');
         $realRavenClient
             ->shouldReceive('captureException')
-            ->with($exception, array(), null, array())
+            ->with($exception, [], null, [])
             ->andReturn('123');
         $realRavenClient->shouldReceive('getIdent')->with('123')->andReturn('456');
 

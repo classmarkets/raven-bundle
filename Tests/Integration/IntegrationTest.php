@@ -2,16 +2,15 @@
 
 namespace Classmarkets\RavenBundle\Tests\Integration;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\Yaml\Yaml;
-
-class IntegrationTest extends \PHPUnit_Framework_TestCase
+class IntegrationTest extends \PHPUnit\Framework\TestCase
 {
+    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
     /** @dataProvider getConfigurations */
     public function testErrorPage($config, $debug)
     {
         if (defined('HHVM_VERSION')) {
-            $this->markTestSkipped("Skipping on hhvm (xml parsing in the framework bundle fails");
+            $this->markTestSkipped('Skipping on hhvm (xml parsing in the framework bundle fails');
         }
 
         $env = uniqid(); // avoid re-declaring classes in the container dump
@@ -26,13 +25,8 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
 
     public function getConfigurations()
     {
-        $configurations = array();
-
         foreach (glob(__DIR__ . '/configs/test*.yml') as $configFilename) {
-            $configurations[] = array($configFilename, $debug = true);
-            $configurations[] = array($configFilename, $debug = false);
+            yield [$configFilename, $debug = true];
         }
-
-        return $configurations;
     }
 }
