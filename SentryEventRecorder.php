@@ -34,6 +34,12 @@ class SentryEventRecorder
         return null;
     }
 
+    /** @return string[] */
+    public function getAllEventIds()
+    {
+        return array_unique(array_values($this->idStore));
+    }
+
     /**
      * Store the same event id for $aliasException as for $originalException.
      *

@@ -17,6 +17,20 @@ class SentryEventRecorderTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('abc', $recorder->getEventIdForException($exception));
     }
 
+    public function testRetrieveAllIds()
+    {
+        $recorder = new SentryEventRecorder();
+
+        $e = new \Exception();
+        $recorder->addExceptionEventId($e, 'abc');
+        $recorder->addExceptionEventId($e, 'abc'); // yes, twice.
+
+        $e = new \Exception();
+        $recorder->addExceptionEventId($e, 'def');
+
+        $this->assertEquals(['abc', 'def'], $recorder->getAllEventIds());
+    }
+
     public function testIgnoresNonObjects()
     {
         $recorder = new SentryEventRecorder();
