@@ -21,8 +21,8 @@ class SentryEventExtension extends \Twig_Extension
 
     public function getFunctions()
     {
-        return array(
-            new \Twig_SimpleFunction('sentry_event_id', array($this->recorder, 'getEventIdForException')),
-        );
+        return [
+            new \Twig_SimpleFunction('sentry_event_id', [$this->recorder, 'getEventIdForException']),
+        ];
     }
 }

@@ -15,7 +15,7 @@ class RecordingRavenClientTest extends \PHPUnit\Framework\TestCase
         $realRavenClient = \Mockery::mock('Raven_Client');
         $realRavenClient
             ->shouldReceive('captureException')
-            ->with($exception, array(), null, array())
+            ->with($exception, [], null, [])
             ->andReturn('123');
         $realRavenClient->shouldReceive('getIdent')->with('123')->andReturn('456');
 

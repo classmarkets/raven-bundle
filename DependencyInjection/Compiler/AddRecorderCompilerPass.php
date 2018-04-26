@@ -12,7 +12,7 @@ class AddRecorderCompilerPass implements CompilerPassInterface
     {
         if ($container->getParameter('cm_raven.enable_exception_listener')) {
             $definition = $container->getDefinition('twig.exception_listener');
-            $definition->addMethodCall('setRecorder', array(new Reference('cm_raven.sentry_event_recorder')));
+            $definition->addMethodCall('setRecorder', [new Reference('cm_raven.sentry_event_recorder')]);
         }
     }
 }

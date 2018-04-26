@@ -27,13 +27,13 @@ class TestKernel extends Kernel
 
     public function registerBundles()
     {
-        return array(
+        return [
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new \Symfony\Bundle\TwigBundle\TwigBundle(),
             new \Symfony\Bundle\MonologBundle\MonologBundle(),
 
             new \Classmarkets\RavenBundle\CMRavenBundle(),
-        );
+        ];
     }
 
     public function getCacheDir()
