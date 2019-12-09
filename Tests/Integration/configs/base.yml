@@ -28,3 +28,7 @@ services:
         arguments:
             - "@twig"
             - "%kernel.debug%"
+
+    Classmarkets\RavenBundle\Controller\TestController:
+        public: true
+        arguments: [ "@twig.controller.exception" ]

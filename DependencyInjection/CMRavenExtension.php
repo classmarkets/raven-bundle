@@ -6,6 +6,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Classmarkets\RavenBundle\ExceptionListener;
 
 class CMRavenExtension extends Extension
 {
@@ -25,7 +26,7 @@ class CMRavenExtension extends Extension
         $enableExceptionListener = $config['enable_exception_listener'];
         $container->setParameter('cm_raven.enable_exception_listener', $enableExceptionListener);
         if ($enableExceptionListener) {
-            $container->setParameter('twig.exception_listener.class', 'Classmarkets\RavenBundle\ExceptionListener');
+            $container->setParameter('twig.exception_listener.class', ExceptionListener::class);
         }
     }
 }
