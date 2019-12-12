@@ -3,14 +3,16 @@
 namespace Classmarkets\RavenBundle\Tests;
 
 use Classmarkets\RavenBundle\Twig\SentryEventExtension;
+use Classmarkets\RavenBundle\SentryEventRecorder;
+use Twig\Test\IntegrationTestCase;
 
-class TwigExtensionTest extends \Twig_Test_IntegrationTestCase
+class TwigExtensionTest extends IntegrationTestCase
 {
     use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 
     public function getExtensions()
     {
-        $recorder = \Mockery::mock('Classmarkets\RavenBundle\SentryEventRecorder');
+        $recorder = \Mockery::mock(SentryEventRecorder::class);
         $recorder->shouldReceive('getEventIdForException')->andReturn('abc');
 
         return [
