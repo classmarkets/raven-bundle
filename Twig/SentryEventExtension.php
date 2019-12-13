@@ -3,8 +3,10 @@
 namespace Classmarkets\RavenBundle\Twig;
 
 use Classmarkets\RavenBundle\SentryEventRecorder;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
-class SentryEventExtension extends \Twig_Extension
+class SentryEventExtension extends AbstractExtension
 {
     /** @var SentryEventRecorder */
     private $recorder;
@@ -22,7 +24,7 @@ class SentryEventExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('sentry_event_id', [$this->recorder, 'getEventIdForException']),
+            new TwigFunction('sentry_event_id', [$this->recorder, 'getEventIdForException']),
         ];
     }
 }

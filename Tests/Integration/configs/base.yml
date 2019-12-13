@@ -4,8 +4,6 @@ framework:
     router:
         resource: "%kernel.root_dir%/configs/routing.php"
         strict_requirements: ~
-    templating:
-        engines: [ twig ]
 
 # Twig Configuration
 twig:
@@ -28,3 +26,7 @@ services:
         arguments:
             - "@twig"
             - "%kernel.debug%"
+
+    Classmarkets\RavenBundle\Controller\TestController:
+        public: true
+        arguments: [ "@twig.controller.exception" ]
