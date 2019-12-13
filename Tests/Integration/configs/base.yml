@@ -4,8 +4,6 @@ framework:
     router:
         resource: "%kernel.root_dir%/configs/routing.php"
         strict_requirements: ~
-    templating:
-        engines: [ twig ]
 
 # Twig Configuration
 twig:
